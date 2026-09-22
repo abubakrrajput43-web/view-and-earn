@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b1f3a">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>View & Earn</title>
+</head>
+<body>
+<header>
+  <div class="brand"><img src="logo.png"><div><b>View & Earn</b><small>Watch • Learn • Earn</small></div></div>
+  <button id="logout" class="ghost">Logout</button>
+</header>
+
+<main>
+<section id="auth" class="card">
+  <h1>اکاؤنٹ بنائیں</h1>
+  <input id="name" placeholder="نام">
+  <input id="phone" placeholder="موبائل نمبر">
+  <input id="email" placeholder="Email (اختیاری)">
+  <button onclick="signup()">Sign Up</button>
+  <p class="note">یہ starter demo ہے۔ حقیقی production میں secure server/database ضروری ہے۔</p>
+</section>
+
+<section id="app" hidden>
+  <div class="hero">
+    <h2 id="hello">خوش آمدید</h2>
+    <p>آپ کا موجودہ access اور progress یہاں نظر آئے گا۔</p>
+  </div>
+
+  <div id="notice" class="notice">اپنے موجودہ level کی تفصیل دیکھیں۔</div>
+  <div id="levels" class="grid"></div>
+
+  <div class="card">
+    <h3>آج کی Progress</h3>
+    <div class="progress"><span id="bar"></span></div>
+    <p id="progressText">0 / 0 videos</p>
+    <button onclick="openVideos()">Videos / Links</button>
+  </div>
+
+  <div class="card">
+    <h3>Payment Methods</h3>
+    <p>Payment manual ہے۔ ادائیگی کے بعد نیچے اپنا Transaction / Reference No. درج کریں۔</p>
+    <div class="payment-box">
+      <div><b>Easypaisa</b><span>0033220088221144332266</span></div>
+      <div><b>JazzCash</b><span>0033220088221144332266</span></div>
+      <div><b>U Paisa</b><span>0033220088221144332266</span></div>
+    </div>
+    <input id="txid" placeholder="Transaction / Reference No.">
+    <button onclick="submitPayment()">Payment Submitted</button>
+    <p id="paymentStatus" class="note"></p>
+  </div>
+</section>
+
+<section id="videos" class="card" hidden>
+  <button class="ghost" onclick="back()">← واپس</button>
+  <h2>Videos / Links</h2>
+  <div id="videoList"></div>
+</section>
+</main>
+
+<footer>View & Earn • Demo PWA</footer>
+<script src="app.js"></script>
+</body>
+</html>
