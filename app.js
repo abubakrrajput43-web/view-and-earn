@@ -141,16 +141,16 @@ async function renderLevels(){
       const {data,error} = await supabase
         .from("levels")
         .select("*")
-        .order("level_no");
+        .order("id");
 
       if(!error && data && data.length){
 
         levels = data.map(x => ({
-          n:Number(x.level_no),
-          v:Number(x.daily_videos),
+          n:Number(x.level_number),
+          v:Number(x.videos_per_day),
           d:Number(x.duration_days),
           fee:Number(x.fee),
-          reward:Number(x.reward)
+          reward:Number(x.daily_reward)
         }));
 
       }
