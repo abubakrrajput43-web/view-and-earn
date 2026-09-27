@@ -308,7 +308,7 @@ async function submitPayment(){
           user_id:profileId,
           level_id:active,
           amount:level ? level.fee : 0,
-          transaction_ref:t,
+          transaction_reference:t,
           status:"pending"
         });
 
